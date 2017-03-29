@@ -4,9 +4,15 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 app.get('/', (req, res) => {
-  res.json({
-    hello: 'JS World',
-  });
+  let data = {};
+
+  if(data){
+    res.json({
+      hello: 'JS World',
+    });
+  }else{
+    res.send('Error');
+  }
 });
 
 app.listen(3000, () => {
